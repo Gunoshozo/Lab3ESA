@@ -31,7 +31,6 @@ public class AlienRestController {
 
     @PostMapping(value = "/v1/add")
     public String addAlien(@ModelAttribute("alien") Alien a){
-        Alien alien = this.alienRepository.findById(a.getId()).orElse(null);
         alienRepository.save(a);
         return "alien";
     }

@@ -33,7 +33,6 @@ public class RaceRestController {
 
     @PostMapping(value = "/v1/add")
     public String addRace(@ModelAttribute("race") Race r){
-        Race race = this.raceRepository.findById(r.getId()).orElse(null);
         raceRepository.save(r);
         return "race";
     }
